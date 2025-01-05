@@ -4,21 +4,89 @@
     <meta charset="UTF-8">
     <title>Ranking Areas by Water Scarcity</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <h1>Ranking Areas by Water Scarcity</h1>
     </header>
-    <section>
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#methodology">Methodology</a></li>
+            <li><a href="#implementation">Implementation</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+    <section id="overview">
         <h2>Project Overview</h2>
         <p>This project leverages the merge sort algorithm to rank urban areas based on water scarcity levels, aiming to optimize resource allocation and ensure equitable distribution.</p>
     </section>
-    <section>
+    <section id="methodology">
         <h2>Methodology</h2>
         <p>We implemented the merge sort algorithm to efficiently sort areas by their water scarcity index, ensuring accurate and timely rankings.</p>
     </section>
-    <section>
+    <section id="implementation">
+        <h2>Implementation</h2>
+        <pre><code>
+// Sample JavaScript implementation of Merge Sort
+function mergeSort(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+    const mid = Math.floor(arr.length / 2);
+    const left = mergeSort(arr.slice(0, mid));
+    const right = mergeSort(arr.slice(mid));
+    return merge(left, right);
+}
+
+function merge(left, right) {
+    let result = [];
+    let leftIndex = 0;
+    let rightIndex = 0;
+    while (leftIndex < left.length && rightIndex < right.length) {
+        if (left[leftIndex] < right[rightIndex]) {
+            result.push(left[leftIndex]);
+            leftIndex++;
+        } else {
+            result.push(right[rightIndex]);
+            rightIndex++;
+        }
+    }
+    return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
+}
+        </code></pre>
+    </section>
+    <section id="results">
         <h2>Results</h2>
+        <canvas id="waterScarcityChart" width="400" height="200"></canvas>
+        <script>
+            const ctx = document.getElementById('waterScarcityChart').getContext('2d');
+            const waterScarcityChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Area A', 'Area B', 'Area C', 'Area D', 'Area E'],
+                    datasets: [{
+                        label: 'Water Scarcity Index',
+                        data: [12, 19, 3, 5, 2],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </section>
+    <section id="conclusion">
+        <h2>Conclusion</h2>
         <p>The sorted list of areas enables targeted interventions in the most affected regions, promoting efficient water management.</p>
     </section>
     <footer>
