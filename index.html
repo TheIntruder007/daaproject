@@ -1,163 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranking Areas by Water Scarcity</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Algorithms for Efficient Water Management in Urban Areas</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Advanced Algorithms for Efficient Water Management in Urban Areas</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#role">Your Role</a></li>
-            <li><a href="#algorithm">Algorithm Selection</a></li>
-            <li><a href="#implementation">Implementation Steps</a></li>
-            <li><a href="#results">Results and Analysis</a></li>
-            <li><a href="#conclusion">Conclusion</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="introduction">
-            <h2>Project Title and Introduction</h2>
-            <ul>
-                <li><strong>Title:</strong> Advanced Algorithms for Efficient Water Management in Urban Areas</li>
-                <li><strong>Introduction:</strong>
-                    <ul>
-                        <li>Overview of the project's goal: improving water distribution in urban areas using advanced algorithms.</li>
-                        <li>Importance of optimizing water management to reduce wastage and ensure equitable distribution.</li>
-                        <li>Briefly mention the specific task you are handling: Ranking areas by water scarcity.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section id="role">
-            <h2>Your Role: Ranking Areas by Water Scarcity</h2>
-            <ul>
-                <li><strong>Description:</strong>
-                    <ul>
-                        <li>Task: Ranking different urban areas based on their levels of water scarcity.</li>
-                        <li>Objective: Prioritize areas in need of immediate attention and resource allocation.</li>
-                        <li>Importance: Helps in informed decision-making and efficient resource distribution.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section id="algorithm">
-            <h2>Algorithm Selection: Merge Sort</h2>
-            <ul>
-                <li><strong>Why Merge Sort:</strong>
-                    <ul>
-                        <li>Chosen for its efficiency in sorting large datasets.</li>
-                        <li>Time complexity: O(n log n), ideal for handling extensive water scarcity data.</li>
-                        <li>Stability: Preserves the order of equal elements, which is useful for additional sorting criteria if needed.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section id="implementation">
-            <h2>Implementation Steps</h2>
-            <ul>
-                <li><strong>Data Collection:</strong>
-                    <ul>
-                        <li>Sources: Municipal records, sensor data, and surveys.</li>
-                        <li>Example Data Points: Area ID, water availability, population, and consumption rates.</li>
-                    </ul>
-                </li>
-                <li><strong>Preprocessing:</strong>
-                    <ul>
-                        <li>Data Cleaning: Removing anomalies and normalizing data to a common scale.</li>
-                        <li>Structuring: Organizing data into arrays or lists for sorting.</li>
-                    </ul>
-                </li>
-                <li><strong>Merge Sort Algorithm (C++ Implementation):</strong>
-                    <ul>
-                        <li>Steps:
-                            <ol>
-                                <li>Divide the dataset into smaller subsets.</li>
-                                <li>Sort each subset recursively.</li>
-                                <li>Merge the sorted subsets to produce the final sorted list.</li>
-                            </ol>
-                        </li>
-                        <li><strong>C++ Code Example:</strong></li>
-                    </ul>
-                    <pre><code>
-#include &lt;iostream&gt;
-#include &lt;vector&gt;
-using namespace std;
+  <header>
+    <h1>Advanced Algorithms for Efficient Water Management in Urban Areas</h1>
+    <p>Leveraging cutting-edge algorithms to optimize water distribution in urban areas and ensure equitable distribution.</p>
+  </header>
 
-void merge(vector&lt;int&gt;&amp; arr, int left, int mid, int right) {
-    int n1 = mid - left + 1;
-    int n2 = right - mid;
-    vector&lt;int&gt; L(n1), R(n2);
+  <main>
+    <section class="intro">
+      <h2>Your Role: Ranking Areas by Water Scarcity</h2>
+      <p>
+        In this section, we rank urban areas based on water scarcity to help prioritize water distribution
+        and optimize resource allocation. The Merge Sort algorithm has been applied to ensure an efficient
+        and stable ranking system.
+      </p>
+    </section>
 
-    for (int i = 0; i &lt; n1; i++)
-        L[i] = arr[left + i];
-    for (int j = 0; j &lt; n2; j++)
-        R[j] = arr[mid + 1 + j];
+    <section class="algorithm">
+      <h2>Algorithm: Merge Sort</h2>
+      <p>We selected the Merge Sort algorithm for its time complexity (O(n log n)) and efficiency in sorting large datasets.</p>
+      <h3>Steps:</h3>
+      <ol>
+        <li>Divide the dataset into smaller subsets.</li>
+        <li>Sort each subset recursively.</li>
+        <li>Merge the sorted subsets to get the final sorted list.</li>
+      </ol>
+    </section>
 
-    int i = 0, j = 0, k = left;
-    while (i &lt; n1 && j &lt; n2) {
-        if (L[i] &lt;= R[j]) {
-            arr[k] = L[i];
-            i++;
-        } else {
-            arr[k] = R[j];
-            j++;
-        }
-        k++;
-    }
+    <section class="charts">
+      <h2>Results and Analysis</h2>
+      <p>Here are the visualizations representing the water scarcity levels in urban areas after applying Merge Sort.</p>
+      
+      <div class="chart">
+        <h3>Bar Chart: Water Scarcity Levels by Area</h3>
+        <img src="bar_chart_water_scarcity.png" alt="Bar Chart of Water Scarcity" class="chart-img">
+      </div>
 
-    while (i &lt; n1) {
-        arr[k] = L[i];
-        i++;
-        k++;
-    }
+      <div class="chart">
+        <h3>Heatmap: Water Scarcity Levels</h3>
+        <img src="heatmap_water_scarcity.png" alt="Heatmap of Water Scarcity" class="chart-img">
+      </div>
+    </section>
 
-    while (j &lt; n2) {
-        arr[k] = R[j];
-        j++;
-        k++;
-    }
-}
+    <section class="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        The Merge Sort algorithm provides an efficient solution for ranking areas by water scarcity,
+        which can assist in prioritizing resource allocation and decision-making.
+      </p>
+    </section>
+  </main>
 
-void mergeSort(vector&lt;int&gt;&amp; arr, int left, int right) {
-    if (left &lt; right) {
-        int mid = left + (right - left) / 2;
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid + 1, right);
-        merge(arr, left, mid, right);
-    }
-}
+  <footer>
+    <p>&copy; 2025 Advanced Algorithms for Efficient Water Management Project</p>
+  </footer>
+</body>
+</html>
 
-int main() {
-    vector&lt;int&gt; scarcity = {34, 7, 23, 32, 5, 62};
-    mergeSort(scarcity, 0, scarcity.size() - 1);
-
-    cout &lt;&lt; "Ranked areas by water scarcity: ";
-    for (int num : scarcity)
-        cout &lt;&lt; num &lt;&lt; " ";
-    return 0;
-}
-                    </code></pre>
-                </li>
-                <li><strong>Post-processing:</strong>
-                    <ul>
-                        <li>Convert sorted data into a ranking table.</li>
-                        <li>Create visual representations such as bar charts and heatmaps to illustrate the rankings.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section id="results">
-            <h2>Results and Analysis</h2>
-            <ul>
-                <li><strong>Sample Data:</strong>
-                    <ul>
-                        <li>Example dataset: {Area A: 34
-::contentReference[oaicite:0]{index=0}
- 
 
