@@ -21,11 +21,11 @@
     </nav>
     <section id="overview">
         <h2>Project Overview</h2>
-        <p>This project leverages the merge sort algorithm to rank urban areas based on water scarcity levels, aiming to optimize resource allocation and ensure equitable distribution.</p>
+        <p>This project focuses on ranking urban areas based on water scarcity levels to optimize resource allocation and ensure equitable distribution.</p>
     </section>
     <section id="methodology">
         <h2>Methodology</h2>
-        <p>We implemented the merge sort algorithm to efficiently sort areas by their water scarcity index, ensuring accurate and timely rankings.</p>
+        <p>We utilize the merge sort algorithm to efficiently rank areas by their water scarcity index, ensuring accurate prioritization for resource distribution.</p>
     </section>
     <section id="implementation">
         <h2>Implementation</h2>
@@ -46,7 +46,7 @@ function merge(left, right) {
     let leftIndex = 0;
     let rightIndex = 0;
     while (leftIndex < left.length && rightIndex < right.length) {
-        if (left[leftIndex] < right[rightIndex]) {
+        if (left[leftIndex].scarcityIndex < right[rightIndex].scarcityIndex) {
             result.push(left[leftIndex]);
             leftIndex++;
         } else {
@@ -56,20 +56,35 @@ function merge(left, right) {
     }
     return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 }
+
+// Example usage:
+let areas = [
+    { name: 'Area A', scarcityIndex: 12 },
+    { name: 'Area B', scarcityIndex: 19 },
+    { name: 'Area C', scarcityIndex: 3 },
+    { name: 'Area D', scarcityIndex: 5 },
+    { name: 'Area E', scarcityIndex: 2 }
+];
+
+let sortedAreas = mergeSort(areas);
+console.log(sortedAreas);
         </code></pre>
     </section>
     <section id="results">
         <h2>Results</h2>
         <canvas id="waterScarcityChart" width="400" height="200"></canvas>
         <script>
+            const sortedAreaNames = sortedAreas.map(area => area.name);
+            const sortedScarcityIndices = sortedAreas.map(area => area.scarcityIndex);
+
             const ctx = document.getElementById('waterScarcityChart').getContext('2d');
             const waterScarcityChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Area A', 'Area B', 'Area C', 'Area D', 'Area E'],
+                    labels: sortedAreaNames,
                     datasets: [{
                         label: 'Water Scarcity Index',
-                        data: [12, 19, 3, 5, 2],
+                        data: sortedScarcityIndices,
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 1
@@ -87,7 +102,7 @@ function merge(left, right) {
     </section>
     <section id="conclusion">
         <h2>Conclusion</h2>
-        <p>The sorted list of areas enables targeted interventions in the most affected regions, promoting efficient water management.</p>
+        <p>The merge sort algorithm effectively ranks urban areas by water scarcity, facilitating targeted interventions in the most affected regions and promoting efficient water management.</p>
     </section>
     <footer>
         <p>© 2025 Your Name</p>
