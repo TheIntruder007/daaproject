@@ -48,17 +48,26 @@ section p {
   margin-bottom: 20px;
 }
 
-section ol {
+section ul {
   font-size: 1.1em;
   margin-left: 20px;
+}
+
+section pre code {
+  font-size: 1.1em;
+  display: block;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  white-space: pre-wrap;
 }
 
 .chart {
   margin-bottom: 30px;
 }
 
-.chart h3 {
-  font-size: 1.6em;
+.chart h4 {
+  font-size: 1.4em;
   margin-bottom: 10px;
 }
 
@@ -78,5 +87,6 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
 
 
