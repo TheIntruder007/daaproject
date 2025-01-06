@@ -1,113 +1,82 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Header */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
 header {
-    background: #0073e6;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2em;
+  font-size: 3em;
+  margin-bottom: 10px;
 }
 
-/* Navigation */
-nav {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+header p {
+  font-size: 1.2em;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Main Content */
 main {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    margin-bottom: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 section {
-    margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 section h2 {
-    border-bottom: 2px solid #0073e6;
-    padding-bottom: 5px;
-    color: #0073e6;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 15px;
 }
 
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
+section p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-ul ul {
-    list-style-type: circle;
+section ol {
+  font-size: 1.1em;
+  margin-left: 20px;
 }
 
-pre {
-    background: #f4f4f4;
-    padding: 10px;
-    overflow-x: auto;
-    border-left: 3px solid #0073e6;
+.chart {
+  margin-bottom: 30px;
 }
 
-code {
-    font-family: 'Courier New', Courier, monospace;
-    color: #d63384;
+.chart h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
 }
 
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px 0;
+.chart-img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
 }
 
-/* Footer */
 footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
+
 
